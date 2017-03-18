@@ -14,13 +14,10 @@ public class Teacher extends AbstractPersistable<Long> {
     @Column(length = 50,nullable = false)
     private String name;
 
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY,mappedBy = "teachers")
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "teachers")
     private Set<Course> courses = new HashSet<>();
 
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
-    @JoinTable(name = "Teacher_Student",
-            joinColumns = {@JoinColumn(name = "teacher_id")},
-            inverseJoinColumns = {@JoinColumn(name = "student_id")})
+    @ManyToMany(mappedBy = "teachers")
     private Set<Student> students = new HashSet<>();
 
     public String getName() {
