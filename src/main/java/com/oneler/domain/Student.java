@@ -24,7 +24,7 @@ public class Student extends AbstractPersistable<Long> {
     @OneToMany(cascade = {CascadeType.ALL})
     private Set<Score> scores = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     @JoinTable(name = "student_teacher",
             joinColumns = {@JoinColumn(name = "student_id")},
             inverseJoinColumns = {@JoinColumn(name = "teacher_id")})

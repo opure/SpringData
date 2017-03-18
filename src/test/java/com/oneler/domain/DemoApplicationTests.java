@@ -17,6 +17,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -35,7 +36,7 @@ public class DemoApplicationTests {
 	public void contextLoads() {
 	}
 
-	@Before
+	//@Before
 	public void init(){
         List<Student> students = new ArrayList<>();
         List<Teacher> teachers = new ArrayList<>();
@@ -70,6 +71,10 @@ public class DemoApplicationTests {
         student.setTeachers(teachers);
         studentRepository.save(student);
         System.out.println("");
+    }
+
+    @Test
+    public void  saveStudentCore() {
     }
 
 }
