@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Person extends AbstractPersistable<Integer> {
 
+    @NotBlank(message = "不能为空！")
     private String name;
     private int age;
 

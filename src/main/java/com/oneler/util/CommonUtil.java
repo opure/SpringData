@@ -1,3 +1,4 @@
+/*
 package com.oneler.util;
 
 import okhttp3.FormBody;
@@ -13,18 +14,22 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+*/
 /**
  * Created by guanyuan on 2017/4/12 16:32.
  * aukey_wish_crawler.
- */
+ *//*
+
 public final class CommonUtil {
 
-    /**
+    */
+/**
      * 将返回精度为 天
      *
      * @param date 时间
      * @return date
-     */
+     *//*
+
     public static Date getDate(Date date) {
         Calendar instance = Calendar.getInstance();
         instance.setTime(date);
@@ -35,35 +40,41 @@ public final class CommonUtil {
         return instance.getTime();
     }
 
-    /**
+    */
+/**
      * 计算日期差
      *
      * @param from 开始
      * @param to   结束
      * @return to - from
-     */
+     *//*
+
     public static int dateDiff(Calendar from, Calendar to) {
         return (int) ((to.getTimeInMillis() - from.getTimeInMillis()) / 86400000);
     }
 
-    /**
+    */
+/**
      * 计算日期差
      *
      * @param from 开始
      * @param to   结束
      * @return to - from
-     */
+     *//*
+
     public static int dateDiff(Date from, Date to) {
         return (int) ((to.getTime() - from.getTime()) / 86400000);
     }
 
-    /**
+    */
+/**
      * 计算日期差
      *
      * @param from 开始
      * @param to   结束
      * @return to - from
-     */
+     *//*
+
     public static float dateDiffByHour(Date from, Date to) {
         return (to.getTime() - from.getTime()) / 3600000;
     }
@@ -98,14 +109,16 @@ public final class CommonUtil {
         return parseKVFromUrl(params).get(key);
     }
 
-    /**
+    */
+/**
      * 分隔数组
      *
      * @param list
      * @param limit
      * @param <T>
      * @return
-     */
+     *//*
+
     public static <T> List<List<T>> splitList(List<T> list, int limit) {
         int size = list.size();
         int from = 0;
@@ -119,10 +132,12 @@ public final class CommonUtil {
         return lists;
     }
 
-    /**
+    */
+/**
      * @param args k1,v1,k2,v3
      * @return
-     */
+     *//*
+
     public static String getParamString(String... args) {
         Iterator<String> iterator = Arrays.asList(args).iterator();
         List<String> pairs = new ArrayList<>();
@@ -218,3 +233,4 @@ public final class CommonUtil {
     }
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.oneler.util;
 
 import com.alibaba.fastjson.JSONObject;
@@ -60,7 +61,9 @@ public class LoginTest {
     public void testLogin() {
         try {
 
-            /*index*/
+            */
+/*index*//*
+
             Request.Builder indexBuilder = new Request.Builder();
             indexBuilder.url(index);
 
@@ -70,7 +73,9 @@ public class LoginTest {
             String cookie = indexResponse.headers("Set-Cookie").stream().collect(joining(";"));
             String token = getKeyValue(cookie, "=", "_xsrf");
 
-            /*login*/
+            */
+/*login*//*
+
             String params = CommonUtil.getParamString("email", account, "password", passwd);
             Request.Builder loginBuilder = new Request.Builder();
             RequestBody loginBody = RequestBody.create(MEDIA_TYPE, params);
@@ -82,7 +87,9 @@ public class LoginTest {
             String content = loginResponse.body().string();
             System.out.println(content);
 
-            /*api*/
+            */
+/*api*//*
+
             Request.Builder apiBuilder = new Request.Builder();
             FormBody.Builder formBuilder = new FormBody.Builder();
             formBuilder.add("start", 0 + "");
@@ -96,10 +103,13 @@ public class LoginTest {
             System.out.println(object.getJSONObject("data").getJSONArray("results").size());
             System.out.println(jsons);
 
-            /*index*/
+            */
+/*index*//*
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
 }
+*/

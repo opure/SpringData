@@ -15,7 +15,7 @@ public class FinalExceptionHandler implements ErrorController {
     public ResultBean error(HttpServletResponse resp, HttpServletRequest req) {
         // 错误处理逻辑
 
-        return new ResultBean().failture(resp);
+        return new ResultBean().failure(resp);
     }
 
     @Override

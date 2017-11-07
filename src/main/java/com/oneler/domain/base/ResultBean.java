@@ -61,7 +61,7 @@ public class ResultBean<T> {
     }
 
 
-    public ResultBean<T> failture(T data) {
+    public ResultBean<T> failure(T data) {
         this.code = HttpStatus.INTERNAL_SERVER_ERROR.value();
         this.msg = HttpStatus.Series.SERVER_ERROR.name();
         this.data = data;
