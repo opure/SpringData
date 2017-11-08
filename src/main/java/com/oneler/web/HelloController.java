@@ -5,6 +5,8 @@ import com.oneler.domain.base.ResultBean;
 import com.oneler.service.PersonService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import javax.validation.ValidationException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -54,10 +57,8 @@ public class HelloController {
 
     @RequestMapping("/test")
     @ResponseBody
-    public ResultBean<Person> userInfo(@Valid Person person) {
-
-        System.out.println(0/3);
-        return new ResultBean<>(personService.savePerson(person));
+    public ResultBean<Person> userInfo( @Validated Person person, BindingResult bindingResult) {
+      return new ResultBean<>(personService.savePerson(person));
 
     }
 

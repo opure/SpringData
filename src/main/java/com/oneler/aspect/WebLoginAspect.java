@@ -48,7 +48,7 @@ public class WebLoginAspect {
     }
 
     @AfterThrowing(value = "casLogin()", throwing = "ex")
-    public void afterThrowing(JoinPoint joinPoint, Exception ex) {
+    public void afterThrowing(JoinPoint joinPoint, Throwable  ex) {
         String methodName = joinPoint.getSignature().getName();
         System.out.println("The method " + methodName + " occurs exception: " + ex);
     }
@@ -61,7 +61,7 @@ public class WebLoginAspect {
 
 
     @Around("casLogin()")
-    public Object aroundMethod(ProceedingJoinPoint pjd) {
+    public Object aroundMethod(ProceedingJoinPoint pjd) throws Throwable {
         Object result = null;
         String methodName = pjd.getSignature().getName();
         //执行目标方法
@@ -76,7 +76,7 @@ public class WebLoginAspect {
         } catch (Throwable e) {
             //异常通知
             System.out.println("The method " + methodName + " occurs expection : " + e);
-            throw new RuntimeException(e);
+            throw e;
         }
         //后置通知
         System.out.println("The method " + methodName + " ends");
